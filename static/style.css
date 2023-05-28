@@ -1,0 +1,62 @@
+/* CSS Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: #333;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  
+  .right {
+    float: right;
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  .gray-panel {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  

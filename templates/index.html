@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>George Vatalis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* Additional CSS Styles */
+    .centered-heading {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 50px;
+      opacity: 0;
+      animation: fade-in 1s ease-in-out forwards;
+    }
+    
+    
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('views.home') }}">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="{{ url_for('views.toxicity') }}">Toxicity</a></li> <!-- Link to the Toxicity page route -->
+      <li><a href="#contact">Contact</a></li>
+      <li class="right"><a href="#login" class="button">Login</a></li>
+      <li class="right"><a href="#register" class="button">Register</a></li>
+    </ul>
+  </nav>
+
+
+
+  <!-- Centered Heading -->
+  <h1 class="centered-heading">Best webpage ever</h1>
+  
+  <!-- Gray Panels -->
+  <div class="gray-panel">
+    <p>Nothing to see here.</p>
+  </div>
+  
+  <div class="gray-panel">
+    <p>Nothing to see here2.</p>
+  </div>
+  
+  <!-- Rest of your content goes here -->
+  
+  <script>
+    // JavaScript code (if any)
+  </script>
+</body>
+</html>
