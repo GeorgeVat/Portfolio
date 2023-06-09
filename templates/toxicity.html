@@ -11,6 +11,7 @@
       padding: 20px;
       margin: 20px auto;
       max-width: 800px;
+      margin-top: 100px;
     }
     
     .input-panel {
@@ -23,22 +24,22 @@
   </style>
 </head>
 <body>
-      <!-- Navigation Menu -->
+  <!-- Navigation Menu -->
   <nav>
     <ul>
       <li><a href="{{ url_for('views.home') }}">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="{{ url_for('views.toxicity') }}">Toxicity</a></li> <!-- Link to the Toxicity page route -->
+      <li><span class="portfolio-heading">George's Portfolio</span></li> <!-- Added the portfolio heading -->
+      <li><a href="{{ url_for('views.toxicity') }}">Toxicity</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li class="right"><a href="#login" class="button">Login</a></li>
-      <li class="right"><a href="#register" class="button">Register</a></li>
     </ul>
   </nav>
+
 
   <!-- Input Panel -->
   <form action="{{ url_for('views.process_string') }}" method="POST">
     <div class="panel input-panel">
-      <h2>Find who you vote!!:</h2>
+      <h2>Find who you vote:</h2>
       <input type="text" id="input-string" name="input_string" />
       <button type="submit">Submit</button>
     </div>

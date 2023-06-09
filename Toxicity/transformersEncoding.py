@@ -11,7 +11,7 @@ import tensorflow as tf
 from transformers import BertTokenizer
 
 
-model = tf.keras.models.load_model('/Users/georgevatalis/Desktop/API/Toxicity/sentiment_model_20k')
+model = tf.keras.models.load_model('/Users/georgevatalis/Desktop/Portfolio/Toxicity/sentiment_model_20k')
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 
@@ -31,7 +31,7 @@ def prepare_data(input_text, tokenizer):
 
 def make_prediction(processed_data, model, classes):
     probs = model.predict(processed_data)[0]
-    output = 'You are a ' + classes[probs.argmax()]
-    prob_output = 'Biden ' + str(probs[0]) + '\n' + 'Trump ' + str(probs[1]) 
+    output = classes[probs.argmax()]
+    prob_output = 'Reddit ' + str(probs[0]) + '\n' + 'Parler ' + str(probs[1]) 
     return output, prob_output
 
