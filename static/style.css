@@ -32,82 +32,140 @@
     color: #333;
     font-size: 18px;
   }
+  /* Styles for the panel */
+  .panel {
+    background-color: #ffffff;
+    width: 650px;
+    left: 60px;
+    padding: 60px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+    margin-bottom: 100px;
+  }
 
+  .panel h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
 
-  /* CSS Styles for Timeline */
-  .timeline {
-    position: relative;
+  .panel p {
+    font-size: 19px;
+    line-height: 1.5;
+  }
+
+  /* Positioning the about container */
+  .about-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
-  .timeline.active {
-    opacity: 1;
-    transform: translateY(0);
+  .circle {
+    position: relative;
+    margin-right: 60px;
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 100px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
   }
 
-  .timeline:before {
+  .circle::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
+    top: 0; /* Adjust the position to align with the top of the circle */
+    left: 0;
+    width: 150px;
     height: 100%;
-    background-color: #bbb;
-    transform: translateX(-50%);
+    background-color: #a0cfe8;
+    z-index: -1;
+    border-radius: 100px;
   }
 
-  .timeline-date {
-    display: block;
-    width: 100px;
-    margin-left: 20px;
-    padding: 5px 10px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    text-align: center;
+  .circle h2 {
+    font-size: 32px;
+    color: #413c3c; /* Set the text color */
+  }
+  .circle h3 {
+    
+    color: #413c3c; /* Set the text color */
+  }
+  .skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Added */
+    flex-direction: row; /* Added */
+    flex-wrap: wrap; /* Added */
+    justify-content: space-between; /* Added */
+    width: 100%; /* Added */
   }
 
-  .timeline-content {
-    flex: 1;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    margin-left: 20px;
+  .skill-list h2 {
+    margin-bottom: 25px; /* Added */
+    width: 100%; /* Added */
   }
 
-  .timeline-content h2 {
-    font-size: 24px;
+  .skill-list li {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
-    font-family: Arial, sans-serif;
+    width: 48%; /* Added */
   }
 
-  .timeline-content p {
-    font-size: 16px;
+  .skill-list li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Change the border-radius value to modify the shape */
+    margin-right: 10px;
+    background-color: #a0cfe8;
+    flex-shrink: 0; 
+  }
+
+
+
+  .skill-list li:last-child::after {
+    display: none;
+  }
+
+  /* Styles for the tray panel */
+
+
+  footer {
+    position: relative;
+    margin-top: 50px;
+    background-color: #333138;
+    padding: 20px;
+    
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+    color:aliceblue;
+    bottom: 0;
+    height: 200px;
+    margin-left: 0px;
+  }
+
+  /* Additional styling for the tray panel */
+  .tray-panel h2 {
+    font-size: 24px;
     margin-bottom: 20px;
-    font-family: Arial, sans-serif;
   }
 
-
-  /* CSS Styles for Timeline Circle */
-  .timeline-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border: 2px solid #bbb;
-    border-radius: 50%;
-    z-index: 1;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added */
+  .tray-panel p {
+    font-size: 16px;
+    line-height: 1.5;
   }
+
+  
 
 
   /* CSS Styles for Slideshow */
