@@ -5,94 +5,52 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
   <style>
-    /* CSS Styles for Timeline */
-    .timeline {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-left: 100px;
-        margin-right: 100px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-      }
+     /* Footer CSS styles */
+    footer {
+      background-color: #f7f7f7;
+      padding: 20px;
+      text-align: left;
+      font-family: Arial, sans-serif; /* Specify the desired font family */
+      margin-top: 100px;
+    }
 
-      .timeline.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .footer-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; /* Updated alignment to flex-start */
+      flex-wrap: wrap;
+    }
 
-      .timeline:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 2px;
-        height: 100%;
-        background-color: #bbb;
-        transform: translateX(-50%);
-      }
+    .contact-info,
+    .social-media {
+      flex-basis: 50%;
+    }
 
-      .timeline-date {
-        display: block;
-        width: 100px;
-        margin-left: 100px;
-        padding: 5px 10px;
-        background-color: #f5f5f5;
-        border-radius: 5px;
-        text-align: center;
-      }
+    .contact-info h2,
+    .social-media h2 {
+      margin-top: 40px;
+    }
 
-      .timeline-content {
-        flex: 1;
-        padding: 20px;
-        max-width: 40%;
-        background-color: #f5f5f5;
-        border-radius: 5px;
-        margin-left: 20px;
-      }
+    .contact-details,
+    .social-media-icons {
+      display: flex;
+      justify-content: flex-start; /* Updated alignment to flex-start */
+      align-items: center; /* Updated alignment to center */
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
-      .timeline-content h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        font-family: Arial, sans-serif;
-      }
+    .contact-details p,
+    .social-media-icons a {
+      margin-right: 16px; /* Add some spacing between items */
+    }
 
-      .timeline-content p {
-        font-size: 16px;
-        margin-bottom: 20px;
-        font-family: Arial, sans-serif;
-      }
-      .timeline-right {
-        flex-direction: row-reverse;
-      }
-
-      .timeline-right .timeline-content {
-        margin-left: 0;
-        margin-right: 20px;
-      }
-
-      .timeline-right .timeline-date {
-        margin-left: 20px;
-        margin-right: 100px;
-      }
-
-      /* CSS Styles for Timeline Circle */
-      .timeline-circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
-        border: 2px solid #bbb;
-        border-radius: 50%;
-        z-index: 1;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added */
-      }
-      
+    .social-media-icons img {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <body>
@@ -128,7 +86,12 @@
     <div class="about-container">
       <div class="panel">
         <h2>Meet George Vatalis</h2>
-        <p>Motivated university graduate with an integrated Master's degree in Computer Engineering & Computer Science from the University of Ioannina. Aiming to leverage academic experience and seek opportunities that will broaden my horizons and enrich my skills.</p>
+        <p>Motivated and enthusiastic, with an integrated Master's degree 
+          in Computer Engineering & Computer Science from the University of Ioannina. Equipped with a solid foundation 
+          in data processing, analysis, visualization techniques and actively seeking opportunities to broaden his knowledge and 
+          skills in the data domain. Eager to embark on new professional opportunities for making meaningful contributions 
+           and generate positive impacts across diverse industries.</p>
+           <p><a href="https://www.dropbox.com/s/88we9khqycivbnh/George%27s%20Resume%20Data%20Engineer.pdf?dl=1" target="_blank">Download CV</a></p>
       </div>
       <div class="circle">
         <h2>Skills</h2>
@@ -152,18 +115,28 @@
           </div>
         </ul>
       </div>
+
+
     </div>
   </section>
-
+  
+  <div class="portfolio-heading">
+    <h1>Projects Timeline</h1>
+  </div>
+  
   <!-- Portfolio Items -->
   <div class="portfolio-item">
     <div class="timeline">
       <div class="timeline-content">
         <span class="timeline-circle"></span>
         <h2>Text Classification Using Logistic Regression</h2>
-        <p>Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.</p>
+        <p>In this project, we investigate the automation of training algorithms in automated detection for extreme texts 
+          and users, with the use of supervised learning. For training properly the models, there are used 2 data sources from t
+          wo different platforms. The first source was collected from the Parler platform, where it was used to “catch” 
+          the meaning of the far-right text, and the second was collected from the subreddit politics from Reddit, 
+          where the content of its posts are politically correct.</p>
       </div>
-      <span class="timeline-date">01/2021-03/2022</span>
+      <span class="timeline-date">10/2021 - 03/2022</span>
     </div>
   </div>
 
@@ -171,10 +144,17 @@
     <div class="timeline timeline-right"> <!-- Added class "timeline-right" -->
       <div class="timeline-content">
         <span class="timeline-circle"></span>
-        <h2>Using Pandas for Exploratory Analysis</h2>
-        <p>Description of project 2 goes hereDescription of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here..</p>
+        <h2>Exploratory Data Analysis on Parler Social Media Platform</h2>
+        <p> This project focuses on studying the features of the social network Parler by analyzing
+          the content of the users,the 
+          hashtags and their popularity until the platform was blocked. The dataset covers the period from 
+          October 1, 2020, to November 1, 2021, which coincides with the American elections. 
+          Given Parler's known pro-Trump user base, it is expected to observe a significant amount of 
+          discussion and excitement related to Trump and the elections during this period.
+
+        </p>
       </div>
-      <span class="timeline-date">01/2021-03/2022</span>
+      <span class="timeline-date">02/2022 - 02/2022</span>
     </div>
   </div>
 
@@ -182,10 +162,14 @@
     <div class="timeline">
       <div class="timeline-content">
         <span class="timeline-circle"></span>
-        <h2>K-means Clustering</h2>
-        <p>Description of project 3 goes heDescription of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.re.</p>
+        <h2>Yelp Business Dataset User Similarities</h2>
+        <p>
+          This project 
+          focuses on utilizing UCF (User-User Collaborative Filtering), ICF (Item-Item Collaborative Filtering), and 
+          Singular Value Decomposition (SVD) techniques to identify similar users. The aim is to determine the most 
+          suitable algorithm and optimal value for k (number of similar users) in order to improve predictions..</p>
       </div>
-      <span class="timeline-date">01/2021-03/2022</span>
+      <span class="timeline-date">02/2021 - 03/2021</span>
     </div>
   </div>
 
@@ -193,10 +177,12 @@
     <div class="timeline timeline-right"> <!-- Added class "timeline-right" -->
       <div class="timeline-content">
         <span class="timeline-circle"></span>
-        <h2>Project 4</h2>
-        <p>Description of projectDescription of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here.Description of project 1 goes here. 4 goes here.</p>
+        <h2>Yelp Business Dataset Clustering</h2>
+        <p>This project focuses on utilizing k-means and agglomerative clustering algorithms to classify businesses 
+          based on their reviews. By applying these algorithms, the study aims to identify patterns and 
+          similarities in business reviews to assign them to relevant categories.</p>
       </div>
-      <span class="timeline-date">01/2021-03/2022</span>
+      <span class="timeline-date">12/2020 - 01/2021</span>
     </div>
   </div>
 
@@ -204,19 +190,41 @@
     <div class="timeline">
       <div class="timeline-content">
         <span class="timeline-circle"></span>
-        <h2>Project 5</h2>
-        <p>Description of project 5 goes here.</p>
+        <h2>Spatial Data Retrieval </h2>
+        <p>In the context of this work, the aim is to develop indexing techniques and queries for spatial data.
+
+          This project implements the sort-tile-recursive (STR) technique. It reads rectangles from a file and constructs 
+          an R-tree in memory using this technique. 
+          
+          Once the R-tree is built, range queries are implemented to perform queries on the spatial data.</p>
       </div>
-      <span class="timeline-date">01/2021-03/2022</span>
+      <span class="timeline-date">04/2020- 05/2020</span>
     </div>
   </div>
 
+
+  <!-- Footer section -->
   <footer id="contact">
-
-      <h2>Contact</h2>
-      <p>Contact information goes here.</p>
-
+    <div class="footer-container">
+      <div class="contact-info">
+        <h2>Contact</h2>
+        <div class="contact-details">
+          <p>Email: giwrgos.vat@gmail.com</p>
+          <p>Phone: +30 6976493629</p>
+          <p>Address: Ioannina, Greece</p>
+        </div>
+      </div>
+      <div class="social-media">
+        <h2>Social</h2>
+        <div class="social-media-icons">
+          <a href="https://www.instagram.com/imgeorgev/" target="_blank"><img src="{{ url_for('views.serve_static', filename='instagram.png') }}" alt="Instagram"></a>
+          <a href="https://github.com/GeorgeVat" target="_blank"><img src="{{ url_for('views.serve_static', filename='github.png') }}" alt="Github"></a>
+          <a href="https://www.linkedin.com/in/george-vatalis-4969111a0/" target="_blank"><img src="{{ url_for('views.serve_static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
   </footer>
+
 
   <script>
     // Slideshow Script
