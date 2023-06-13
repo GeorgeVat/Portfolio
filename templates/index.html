@@ -38,6 +38,7 @@
       flex: 1;
       padding: 30px;
       max-width: 40%;
+      margin-right: -75px;
       border-radius: 5px;
       background: white;
       background-position: center top;
@@ -65,10 +66,6 @@
       margin-right: 20px;
     }
 
-    .timeline-right .timeline-date {
-      margin-left: 20px;
-      margin-right: 100px;
-    }
 
     /* CSS Styles for Timeline Circle */
     .timeline-circle {
@@ -149,7 +146,7 @@
     <ul>
       <li><a href="{{ url_for('views.home') }}">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><span class="portfolio-heading">George's Portfolio</span></li> <!-- Added the portfolio heading -->
+      <li><a href="#portfolio"> <img src="{{ url_for('views.serve_static', filename='titleNav.png') }}" alt="Image 3" width="150" height="150"></a></li> <!-- Added the portfolio heading -->
       <li><a href="{{ url_for('views.toxicity') }}">Toxicity</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -158,9 +155,9 @@
 
   <!-- Slideshow -->
   <div class="slideshow-container">
-    <img class="slideshow-image active" src="{{ url_for('views.serve_static', filename='back1.jpg') }}"  alt="Image Description" width="1300" height="800">
-    <img class="slideshow-image" src="{{ url_for('views.serve_static', filename='back1.jpg') }}"  alt="Image 2" width="1300" height="800">
-    <img class="slideshow-image" src="{{ url_for('views.serve_static', filename='back1.jpg') }}" alt="Image 3" width="1300" height="800">
+    <img class="slideshow-image active" src="{{ url_for('views.serve_static', filename='cloud2.jpg') }}"  alt="Image Description" width="1300" height="800">
+    <img class="slideshow-image" src="{{ url_for('views.serve_static', filename='cloud1.jpg') }}"  alt="Image 2" width="1300" height="800">
+    <img class="slideshow-image" src="{{ url_for('views.serve_static', filename='cloud.jpg') }}" alt="Image 3" width="1300" height="800">
   </div>
 
   <!-- About Portfolio -->
@@ -181,7 +178,7 @@
           in data processing, analysis, visualization techniques and actively seeking opportunities to broaden his knowledge and 
           skills in the data domain. Eager to embark on new professional opportunities for making meaningful contributions 
            and generate positive impacts across diverse industries.</p>
-           <p><a href="https://www.dropbox.com/s/88we9khqycivbnh/George%27s%20Resume%20Data%20Engineer.pdf?dl=1" target="_blank">Download CV</a></p>
+          <p><a href="https://www.dropbox.com/s/88we9khqycivbnh/George%27s%20Resume%20Data%20Engineer.pdf?dl=1" target="_blank" class="download-cv">Download CV</a></p>
       </div>
       <div class="circle">
         <h2>Skills</h2>
@@ -210,90 +207,90 @@
     </div>
   </section>
   
-  <div class="portfolio-heading">
-    <h1>Projects Timeline</h1>
-  </div>
   
   <!-- Portfolio Items -->
 
-  <!-- Portfolio Items -->
-  <div class="portfolio-item">
-    <div class="timeline">
-      <div class="timeline-content">
-        <span class="timeline-circle"></span>
-        <div class="image-frame">
-          <img src="{{ url_for('views.serve_static', filename='bert.jpg') }}" alt="Image 1" width="300" height="300">
-          <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification using BERT</h2></a>
-      
-        </div>
-      </div>
-      <span class="timeline timeline-right"></span>
+  <section id="portfolio">
+    <div class="portfolio-heading">
+      <h1>Projects Timeline</h1>
+    </div>
+    <div class="portfolio-item">
+      <div class="timeline">
         <div class="timeline-content">
+          <span class="timeline-circle"></span>
           <div class="image-frame">
-            <img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
+            <img src="{{ url_for('views.serve_static', filename='bert.jpg') }}" alt="Image 1" width="300" height="300">
+            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification using BERT</h2></a>
+        
           </div>
         </div>
-      </div>
-  </div>
-
-
-  <div class="portfolio-item">
-    <div class="timeline">
-      <div class="timeline-content">
-        <span class="timeline-circle"></span>
-        <div class="image-frame">
-          <img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-          <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
-        </div>
-      </div>
-      <span class="timeline timeline-right"></span>
-        <div class="timeline-content">
-          <div class="image-frame">
-            <img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
+        <span class="timeline timeline-right"></span>
+          <div class="timeline-content">
+            <div class="image-frame">
+              <img src="{{ url_for('views.serve_static', filename='lr.png') }}" alt="Image 1" width="300" height="300">
+              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
+            </div>
           </div>
         </div>
-      </div>
-  </div>
+    </div>
 
-  <div class="portfolio-item">
-    <div class="timeline">
-      <div class="timeline-content">
-        <span class="timeline-circle"></span>
-        <div class="image-frame">
-          <a href="https://www.instagram.com/imgeorgev/" target="_blank"></a><img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-          <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
-        </div>
-      </div>
-      <span class="timeline timeline-right"></span>
+
+    <div class="portfolio-item">
+      <div class="timeline">
         <div class="timeline-content">
+          <span class="timeline-circle"></span>
           <div class="image-frame">
             <img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
+            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Exploratory Data Analysis on Parler Social Media Platform</h2></a>
           </div>
         </div>
-      </div>
-  </div>
-  <div class="portfolio-item">
-    <div class="timeline">
-      <div class="timeline-content">
-        <span class="timeline-circle"></span>
-        <div class="image-frame">
-          <img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-          <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
-        </div>
-      </div>
-      <span class="timeline timeline-right"></span>
-        <div class="timeline-content">
-          <div class="image-frame">
-            <img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
+        <span class="timeline timeline-right"></span>
+          <div class="timeline-content">
+            <div class="image-frame">
+              <img src="{{ url_for('views.serve_static', filename='SVDrmse.png') }}" alt="Image 1" width="300" height="300">
+              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Yelp Business Dataset User Similarities</h2></a>
+            </div>
           </div>
         </div>
-      </div>
-  </div>
+    </div>
 
+    <div class="portfolio-item">
+      <div class="timeline">
+        <div class="timeline-content">
+          <span class="timeline-circle"></span>
+          <div class="image-frame">
+            <a href="https://www.instagram.com/imgeorgev/" target="_blank"></a><img src="{{ url_for('views.serve_static', filename='CM.png') }}" alt="Image 1" width="300" height="300">
+            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Yelp Business Dataset Clustering</h2></a>
+          </div>
+        </div>
+        <span class="timeline timeline-right"></span>
+          <div class="timeline-content">
+            <div class="image-frame">
+              <img src="{{ url_for('views.serve_static', filename='Rtree.png') }}" alt="Image 1" width="300" height="300">
+              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Spatial Data Retrieval</h2></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="timeline">
+        <div class="timeline-content">
+          <span class="timeline-circle"></span>
+          <div class="image-frame">
+            <img src="{{ url_for('views.serve_static', filename='heap.png') }}" alt="Image 1" width="300" height="300">
+            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Top-K queries</h2></a>
+          </div>
+        </div>
+        <span class="timeline timeline-right"></span>
+          <div class="timeline-content">
+            <div class="image-frame">
+              <img src="{{ url_for('views.serve_static', filename='index.png') }}" alt="Image 1" width="300" height="300">
+              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Spatial Data Retrieval Grid Indexing</h2></a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
 
   <!-- Footer section -->
   <footer id="contact">
