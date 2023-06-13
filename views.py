@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, jsonify, redirect, url_for
-from Toxicity.transformersEncoding import *
+#from Toxicity.transformersEncoding import *
 
 
 
