@@ -1,7 +1,7 @@
-click @ file:///Users/cbousseau/work/recipes/ci_py311/click_1677920889666/work
-Flask @ file:///Users/cbousseau/work/recipes/ci_py311/flask_1677937489551/work
+click == 8.0.4
+Flask == 2.2.2
 gunicorn==20.1.0
-itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
-Jinja2 @ file:///Users/cbousseau/work/recipes/ci_py311/jinja2_1677916113134/work
-MarkupSafe @ file:///Users/cbousseau/work/recipes/ci_py311/markupsafe_1677914270710/work
-Werkzeug @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_fc9kcczuwd/croot/werkzeug_1679489745296/work
+itsdangerous == 2.0.1
+Jinja2 ==3.1.2
+MarkupSafe == 2.1.1
+Werkzeug == 2.2.3
