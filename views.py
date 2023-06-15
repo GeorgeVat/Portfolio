@@ -14,14 +14,14 @@ def home():
 def toxicity():
     return render_template("toxicity.html")
 
-@views.route('/process_string', methods=['POST'])
-def process_string():
-    input_string = request.form.get('input_string')
-    encoder = prepare_data(input_string, tokenizer)
-    output1, output2 = make_prediction(encoder, model, classes=['Reddit', 'Parler'])
+# @views.route('/process_string', methods=['POST'])
+# def process_string():
+#     input_string = request.form.get('input_string')
+#     encoder = prepare_data(input_string, tokenizer)
+#     output1, output2 = make_prediction(encoder, model, classes=['Reddit', 'Parler'])
 
     
-    return render_template('toxicity.html', result1=output1, result2=output2)
+#     return render_template('toxicity.html', result1=output1, result2=output2)
 
 # Serve static files
 @views.route('/static/<path:filename>')
