@@ -1,372 +1,193 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>George Vatalis - Portfolio</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  
-  <style>
-    /* CSS Styles for Timeline */
-    .timeline {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-left: 100px;
-      margin-right: 100px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='/images/favicon.png') }}" />
 
-    .timeline.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  <title>
+    George Vatali's Portfolio 
+  </title>
 
-    .timeline:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 2px;
-      height: 100%;
-      background-color: #bbb;
-      transform: translateX(-50%);
-    }
-
-    .timeline-content {
-      flex: 1;
-      padding: 30px;
-      max-width: 40%;
-      margin-right: -75px;
-      border-radius: 5px;
-      background: white;
-      background-position: center top;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added */
-      margin-bottom: 50px;
-    }
-
-    .timeline-content h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      margin-top: -10px; /* Adjust the value as needed */
-      border-radius: 5px;
-      color: #f5f5f5;
-    }
-
-
-    .timeline-right {
-      flex-direction: row-reverse;
-    }
-
-    .timeline-right .timeline-content {
-      margin-left: 0;
-      margin-right: 20px;
-    }
-
-
-    /* CSS Styles for Timeline Circle */
-    .timeline-circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50px;
-      height: 50px;
-      background-color: #fff;
-      border: 2px solid #bbb;
-      border-radius: 50%;
-      z-index: 1;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Added */
-    }
-    
-    .portfolio-heading {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-    font-family: Arial, sans-serif;
-    }
-
-    .image-frame {
-      position: relative;
-      width: 470px;
-      height: 300px;
-      overflow: hidden;
-    }
-
-    .image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .image-frame:hover img {
-      transform: scale(1.10);
-    }
-
-    .image-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      font-size: 20px;
-      font-family: Arial, sans-serif;
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .image-frame:hover .image-title {
-      opacity: 1;
-    }
-
-    .list-items {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 10px;
-      color: black;
-    }
-
-    .list-items li {
-      color: black;
-      margin-bottom: 5px;
-      margin-left: 200px; /* Adjust the margin as needed */
-    }
-  </style>
+  <meta name="description" content="This is just a portfolio ">
+  <!-- keywords below-->
+  <meta name="keywords" content="George Vatalis, portfolio, data engineer, data science "/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
 </head>
+
 <body>
-  <!-- Navigation Menu -->
-  <nav>
-    <ul>
-      <li><a href="{{ url_for('views.home') }}">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#portfolio"> <img src="{{ url_for('views.serve_static', filename='titleNav.png') }}" alt="Image 3" width="150" height="150"></a></li> <!-- Added the portfolio heading -->
-      <li><a href="{{ url_for('views.toxicity') }}">Toxicity</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
+  <!-- ***** Header ***** -->
 
-  <!-- Slideshow -->
-  <div class="slideshow-container">
-    <img class="slideshow-image active" src="{{ url_for('views.serve_static', filename='cloud2.jpg') }}"  alt="Image Description" width="1300" height="800">
-    <img class="slideshow-image" src="{{ url_for('views.serve_static', filename='cloud1.jpg') }}"  alt="Image 2" width="1300" height="800">
-    <img class="slideshow-image" src="{{ url_for('views.serve_static', filename='cloud.jpg') }}" alt="Image 3" width="1300" height="800">
-  </div>
-
-  <!-- About Portfolio -->
-  <div class="about-box">
-    <h2>George's dummy portfolio</h2>
-    <p>"Big data is like teenage sex: everyone talks about it, nobody really knows how to do it, 
-      everyone thinks everyone else is doing it, so everyone claims they are doing it."</p>
-      <p>- Dan Ariely</p>
-  </div>
-
-  <!-- About section -->
-  <section id="about">
-    <div class="about-container">
-      <div class="panel">
-        <h2>Meet George Vatalis</h2>
-        <p>Motivated and enthusiastic, with an integrated Master's degree 
-          in Computer Engineering & Computer Science from the University of Ioannina. Equipped with a solid foundation 
-          in data processing, analysis, visualization techniques and actively seeking opportunities to broaden his knowledge and 
-          skills in the data domain. Eager to embark on new professional opportunities for making meaningful contributions 
-           and generate positive impacts across diverse industries.</p>
-          <p><a href="https://www.dropbox.com/s/88we9khqycivbnh/George%27s%20Resume%20Data%20Engineer.pdf?dl=1" target="_blank" class="download-cv">Download CV</a></p>
-      </div>
-      <div class="circle">
-        <h2>Skills</h2>
-        <ul class="skill-list">
-          <div>
-            <h3>Languages</h3>
-            <li>Python</li>
-            <li>C/C++</li>
-            <li>JavaScript</li>
-            <li>SQL</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </div>
-          <div>
-            <h3>Frameworks</h3>
-            <li>Flask</li>
-            <li>Pandas</li>
-            <li>Pyspark</li>
-            <li>Tensorflow</li>
-            <li>Keras</li>
-          </div>
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
         </ul>
+      </nav>
+    </div>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+          
+          <span>George Vatalis</span>
+        </h1>
+        <!-- Put a small paragraph about yourself -->
+        <p>Data enthusiast based in Ioannina, Greece.</p>
+        <a href="#contact" class="btn btn--pink">Get in touch</a>
       </div>
+    </div>
+  </header>
 
+  <main role="main">
+    <!-- ***** About ***** -->
 
+    <section class="about" id="about">
+      <div class="row">
+        <h2>About Me</h2>
+        <div class="about__content">
+          <div class="about__text">
+            
+            <p>
+              Motivated and enthusiastic, with an integrated Master's degree 
+              in Computer Engineering & Computer Science from the University of Ioannina. Equipped with a solid foundation 
+              in data processing, analysis, visualization techniques and actively seeking opportunities to broaden his knowledge and 
+              skills in the data domain. Eager to embark on new professional opportunities for making meaningful contributions 
+              and generate positive impacts across diverse industries.
+            </p>
+            <!-- link for resume -->
+            <a href="https://www.dropbox.com/s/88we9khqycivbnh/George%27s%20Resume%20Data%20Engineer.pdf?dl=1" class="btn">My Resume</a>
+          </div>
+
+          <div class="about__photo-container">
+            
+            <img class="about__photo" src="{{ url_for('static', filename='/images/bert.jpg') }}" alt="George Vatalis" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ***** Work ***** -->
+
+    <section class="work" id="work">
+      <div class="row">
+        <h2>My Work</h2>
+        <div class="work__boxes">
+
+          <!-- Each div with the work__box class is a project. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Portfolio Template</h3>
+              <p>
+                A free Open Source Portfolio for anyone to use for free.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+                <li>Parcel</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://hoffstech.com" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/sbenhoff/portfolio" title="View Source Code" target="_blank">
+                  <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{ url_for('static', filename='/images/project-1.png') }}" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Calculator</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                eius.
+              </p>
+              <ul class="work__list">
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Node</li>
+                <li>MongoDB</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="#" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="#">
+                  <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{ url_for('static', filename='/images/project-2.png') }}" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ***** Contact ***** -->
+
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Get in Touch</h2>
+      <div class="contact__info">
+        <p>
+          LALALAALAL
+        </p>
+        <!-- Email button -->
+        <a href="mailto:you@example.com" class="btn">giwrgos.vat@gmail.com</a>
+        <a class="btn">Download CV</a>
     </div>
   </section>
-  
-  
-  <!-- Portfolio Items -->
 
-  <section id="portfolio">
-    <div class="portfolio-heading">
-      <h1>Projects Timeline</h1>
-    </div>
-    <div class="portfolio-item">
-      <div class="timeline">
-        <div class="timeline-content">
-          <span class="timeline-circle"></span>
-          <div class="image-frame">
-            <img src="{{ url_for('views.serve_static', filename='bert.jpg') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification using BERT</h2></a>
-        
-          </div>
-        </div>
-        <span class="timeline timeline-right"></span>
-          <div class="timeline-content">
-            <div class="image-frame">
-              <img src="{{ url_for('views.serve_static', filename='lr.png') }}" alt="Image 1" width="300" height="300">
-              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Text Classification Using Logistic Regression</h2></a>
-            </div>
-          </div>
-        </div>
-    </div>
+  <!-- ***** Footer ***** -->
 
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://linkedin.com/" title="Link to Linkedin Profile">
+            <img src="{{ url_for('static', filename='/images/linkedin.svg') }}" class="footer__social-image" alt="Twitter">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://github.com/" title="Link to Github Profile">
+            <img src="{{ url_for('static', filename='/images/github.svg') }}" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+      </ul>
 
-    <div class="portfolio-item">
-      <div class="timeline">
-        <div class="timeline-content">
-          <span class="timeline-circle"></span>
-          <div class="image-frame">
-            <img src="{{ url_for('views.serve_static', filename='wordcloud.png') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Exploratory Data Analysis on Parler Social Media Platform</h2></a>
-          </div>
-        </div>
-        <span class="timeline timeline-right"></span>
-          <div class="timeline-content">
-            <div class="image-frame">
-              <img src="{{ url_for('views.serve_static', filename='SVDrmse.png') }}" alt="Image 1" width="300" height="300">
-              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Yelp Business Dataset User Similarities</h2></a>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="timeline">
-        <div class="timeline-content">
-          <span class="timeline-circle"></span>
-          <div class="image-frame">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"></a><img src="{{ url_for('views.serve_static', filename='CM.png') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Yelp Business Dataset Clustering</h2></a>
-          </div>
-        </div>
-        <span class="timeline timeline-right"></span>
-          <div class="timeline-content">
-            <div class="image-frame">
-              <img src="{{ url_for('views.serve_static', filename='Rtree.png') }}" alt="Image 1" width="300" height="300">
-              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Spatial Data Retrieval</h2></a>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="portfolio-item">
-      <div class="timeline">
-        <div class="timeline-content">
-          <span class="timeline-circle"></span>
-          <div class="image-frame">
-            <img src="{{ url_for('views.serve_static', filename='heap.png') }}" alt="Image 1" width="300" height="300">
-            <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Top-K queries</h2></a>
-          </div>
-        </div>
-        <span class="timeline timeline-right"></span>
-          <div class="timeline-content">
-            <div class="image-frame">
-              <img src="{{ url_for('views.serve_static', filename='index.png') }}" alt="Image 1" width="300" height="300">
-              <a href="https://www.instagram.com/imgeorgev/" target="_blank"> <h2 class="image-title">Spatial Data Retrieval Grid Indexing</h2></a>
-            </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- Footer section -->
-  <footer id="contact">
-    <div class="footer-container">
-      <div class="contact-info">
-        <h2>Contact</h2>
-        <div class="contact-details">
-          <p>Email: giwrgos.vat@gmail.com</p>
-          <p>Phone: +30 6976493629</p>
-          <p>Address: Ioannina, Greece</p>
-        </div>
-      </div>
-      <div class="social-media">
-        <h2>Social</h2>
-        <div class="social-media-icons">
-          <a href="https://www.instagram.com/imgeorgev/" target="_blank"><img src="{{ url_for('views.serve_static', filename='instagram.png') }}" alt="Instagram"></a>
-          <a href="https://github.com/GeorgeVat" target="_blank"><img src="{{ url_for('views.serve_static', filename='github.png') }}" alt="Github"></a>
-          <a href="https://www.linkedin.com/in/george-vatalis-4969111a0/" target="_blank"><img src="{{ url_for('views.serve_static', filename='linkedin.png') }}" alt="LinkedIn"></a>
-        </div>
-      </div>
+      <p>
+        &copy; 2023 - designed & developed by George Vatalis with love.
+      </p>
     </div>
   </footer>
 
-
-  <script>
-    // Slideshow Script
-    var slideIndex = 0;
-    var slides = document.getElementsByClassName("slideshow-image");
-
-    function showSlide(index) {
-      if (index < 0) {
-        index = slides.length - 1;
-      } else if (index >= slides.length) {
-        index = 0;
-      }
-
-      for (var i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-      }
-
-      slides[index].classList.add("active");
-      slideIndex = index;
-    }
-
-    function nextSlide() {
-      showSlide(slideIndex + 1);
-    }
-
-    function previousSlide() {
-      showSlide(slideIndex - 1);
-    }
-
-    // Auto change slide every 3 seconds
-    setInterval(nextSlide, 3000);
-
-    // Timeline Animation
-    var timelineItems = document.querySelectorAll(".portfolio-item .timeline");
-    var windowHeight = window.innerHeight;
-
-    function animateTimelineItems() {
-      timelineItems.forEach(function (item) {
-        var itemPosition = item.getBoundingClientRect().top;
-
-        if (itemPosition - windowHeight <= 0) {
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
-        }
-      });
-    }
-
-    // Initial function call
-    animateTimelineItems();
-
-    // Event listener for scroll event
-    window.addEventListener("scroll", animateTimelineItems);
-  </script>
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <img src="{{ url_for('static', filename='/images/arrow-up.svg') }}" alt="Back to Top" class="back-to-top__image"/>
+  </a>
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
 </body>
+
 </html>
