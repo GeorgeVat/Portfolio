@@ -60,9 +60,8 @@
             <p>
               Motivated and enthusiastic, with an integrated Master's degree 
               in Computer Engineering & Computer Science from the University of Ioannina. Equipped with a solid foundation 
-              in data processing, analysis, visualization techniques and actively seeking opportunities to broaden his knowledge and 
-              skills in the data domain. Eager to embark on new professional opportunities for making meaningful contributions 
-              and generate positive impacts across diverse industries.
+              in data processing, analysis, visualization techniques and eager to embark opportunities to broaden my knowledge and 
+              skills in the data domain.
             </p>
             <!-- link for resume -->
             <a href="https://www.dropbox.com/s/88we9khqycivbnh/George%27s%20Resume%20Data%20Engineer.pdf?dl=1" class="btn">My Resume</a>
@@ -76,7 +75,7 @@
       </div>
     </section>
     <!-- ***** Work ***** -->
-
+    
     <section class="work" id="work">
       <div class="row">
         <h2>My Work</h2>
@@ -86,43 +85,43 @@
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Portfolio Template</h3>
+              <h3>Portfolio</h3>
               <p>
-                A free Open Source Portfolio for anyone to use for free.
+                Whatever you see here.
               </p>
               <ul class="work__list">
                 <li>HTML</li>
                 <li>SCSS</li>
                 <li>JavaScript</li>
-                <li>Parcel</li>
+                <li>Flask</li>
               </ul>
 
               <div class="work__links">
-                <a href="https://hoffstech.com" target="_blank" class="link__text">
+                <a href="#top" target="_blank" class="link__text">
                   Visit Site <span>&rarr;</span>
                 </a>
-                <a href="https://github.com/sbenhoff/portfolio" title="View Source Code" target="_blank">
+                <a href="#top" title="View Source Code" target="_blank">
                   <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" alt="GitHub">
                 </a>
               </div>
             </div>
             <div class="work__image-box">
-              <img src="{{ url_for('static', filename='/images/project-1.png') }}" class="work__image" alt="Project 1" />
+              <img src="{{ url_for('static', filename='/images/portfolio.png') }}" class="work__image" alt="Project 1" />
             </div>
           </div>
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Calculator</h3>
+              <h3>Text Classification with BERT</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                eius.
+                NLP project for detecting alt-right users and extreme, offensive, racist text.
               </p>
               <ul class="work__list">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>Node</li>
-                <li>MongoDB</li>
+                <li>Jupyter</li>
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Tensorflow</li>
+                <li>Transformers</li>
               </ul>
 
               <div class="work__links">
@@ -135,13 +134,154 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="{{ url_for('static', filename='/images/project-2.png') }}" class="work__image" alt="Project 1" />
+              <img src="{{ url_for('static', filename='/images/bert.png') }}" class="work__image" alt="Project 1" />
             </div>
           </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Text Classification with Logistic Regresion</h3>
+              <p>
+                NLP project, to categorize users based on the platform they came from.
+              </p>
+              <ul class="work__list">
+                <li>Jupyter</li>
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Scit-learn</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://github.com/GeorgeVat/Text-Classification-using-Logistic-Regression" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/GeorgeVat/Text-Classification-using-Logistic-Regression">
+                  <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{ url_for('static', filename='/images/lr.png') }}" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Exploratory Data Analysis on Parler Social Media Platform</h3>
+              <p>
+                This project focuses on studying the social network Parler by analyzing user's content.
+              </p>
+              <ul class="work__list">
+                <li>Jupyter</li>
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>Seaborn</li>
+                <li>EDA</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://github.com/GeorgeVat/Parler-Hashtag-Analytics" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/GeorgeVat/Parler-Hashtag-Analytics">
+                  <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{ url_for('static', filename='/images/parleranalysis.png') }}" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Spatial Data Retrieval</h3>
+              <p>
+                Developing indexing techniques and queries for spatial data, implementing the sort-tile-recursive (STR) technique for building R-tree.
+              </p>
+              <ul class="work__list">
+                
+                <li>Python</li>
+                <li>STR</li>
+                <li>R-Tree</li>
+                
+              </ul>
+
+              <div class="work__links">
+                <a href="https://github.com/GeorgeVat/Spatial-Data" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/GeorgeVat/Spatial-Data">
+                  <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{ url_for('static', filename='/images/rtree.png') }}" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Top-k-queries</h3>
+              <p>
+                Takes a positive integer k and calculates the top-k objects from different sources.
+              </p>
+              <ul class="work__list">
+                
+                <li>Python</li>
+                <li>Heap</li>
+
+              </ul>
+
+              <div class="work__links">
+                <a href="https://github.com/GeorgeVat/Top-k-queries" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/GeorgeVat/Top-k-queries">
+                  <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{ url_for('static', filename='/images/topk.png') }}" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Spatial Data using Grid Indexing</h3>
+              <p>
+                Developing grid indexing technique for spatial data and efficiently create queries.
+              </p>
+              <ul class="work__list">
+                
+                <li>Python</li>
+                <li>Heap</li>
+
+              </ul>
+
+              <div class="work__links">
+                <a href="https://github.com/GeorgeVat/Spatial-data-using-grid-indexing" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/GeorgeVat/Spatial-data-using-grid-indexing">
+                  <img src="{{ url_for('static', filename='/images/github.svg') }}" class="work__code" title="View Source Code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="{{ url_for('static', filename='/images/spatial.png') }}" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
 
         </div>
       </div>
     </section>
+
 
   </main>
 
@@ -152,13 +292,15 @@
       <h2>Get in Touch</h2>
       <div class="contact__info">
         <p>
-          LALALAALAL
+          Feel free to contact me for collaboration or questions.
         </p>
         <!-- Email button -->
         <a href="mailto:you@example.com" class="btn">giwrgos.vat@gmail.com</a>
         <a class="btn">Download CV</a>
     </div>
   </section>
+  
+
 
   <!-- ***** Footer ***** -->
 
@@ -188,6 +330,8 @@
     <img src="{{ url_for('static', filename='/images/arrow-up.svg') }}" alt="Back to Top" class="back-to-top__image"/>
   </a>
   <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+
 </body>
 
 </html>

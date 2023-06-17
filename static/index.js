@@ -41,3 +41,26 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+
+// TIMELINE effect
+var workBoxes = document.querySelectorAll(".work__box");
+var windowHeight = window.innerHeight;
+
+function animateTimelineItems() {
+  workBoxes.forEach(function (box) {
+    var boxPosition = box.getBoundingClientRect().top;
+
+    if (boxPosition < windowHeight - 100) {
+      box.classList.add("active");
+    } else {
+      box.classList.remove("active");
+    }
+  });
+}
+
+// Initial function call
+animateTimelineItems();
+
+// Event listener for scroll event
+window.addEventListener("scroll", animateTimelineItems);

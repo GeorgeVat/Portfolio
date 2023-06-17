@@ -34,7 +34,7 @@
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
-    --darkBlue: #172f33;
+    --darkBlue: #121923;
     --blue: #419396;
     --white: #f4ecec;
     --white-1: #fffdfdda;
@@ -445,7 +445,19 @@ body:not(.user-is-tabbing) a:focus {
 .work__box {
     display: flex;
     align-items: center;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+.work__box.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.work__box.active .work__text {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
 @media(max-width: 900px) {
     .work__box {
@@ -471,7 +483,17 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__text {
     flex: 0 0 30%;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+
+@media (max-width: 900px) {
+    .work__text {
+    transform: translateY(-20px);
+    }
+}
+
 
 .work__list {
     /* list-style-type: square; */
@@ -540,6 +562,7 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+
 /* --------------------------------------- */
 /* ----- Contact ----- */
 /* --------------------------------------- */
@@ -581,3 +604,10 @@ body:not(.user-is-tabbing) a:focus {
         padding: var(--gutter-medium) 0;
     } 
 }
+
+
+
+  /* --------------------------------------- */
+/* ----- tester ----- */
+/* --------------------------------------- */
+
