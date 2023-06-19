@@ -556,7 +556,7 @@ body:not(.user-is-tabbing) a:focus {
   .about__text {
     flex: 1;
     margin-bottom: 20px; /* Add margin bottom for spacing */
-    margin-right: 15rem;
+    margin-right: 20rem;
   }
   
   .about__skill-container {
